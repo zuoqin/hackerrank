@@ -1,0 +1,1 @@
+# Haskell solutions for HackerRank
