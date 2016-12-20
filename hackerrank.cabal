@@ -12,10 +12,10 @@ category:            Study
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
-
+IsFibo
 library
   hs-source-dirs:      src
-  exposed-modules:     MergeList,PointsOnaLine,FillingJars,SherlockAndProbability,RectangularGame,SpecialMultiple
+  exposed-modules:     MergeList,PointsOnaLine,FillingJars,SherlockAndProbability,RectangularGame,SpecialMultiple,IsFibo
   build-depends:       base >= 4.7 && < 5
                      , containers
   default-language:    Haskell2010
