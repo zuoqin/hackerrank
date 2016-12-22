@@ -28,5 +28,5 @@ isFibo ::  IO ()
 isFibo = do
     n_temp <- getLine
     let n = read n_temp :: Int
-    isFiboCases n (Set.fromList(takeWhile (<1000) fibonaci))
+    isFiboCases n (Set.fromList(takeWhile (<=10000000000) fibonaci))
     
