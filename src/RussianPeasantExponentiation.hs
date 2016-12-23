@@ -5,10 +5,12 @@ module RussianPeasantExponentiation
   
 import Numeric
 import Data.Char
-import Data.Set as Set
 
-fibonaci :: Num b => [b]
-fibonaci = Prelude.map fst (iterate f (0,1)) where f (x,y) = (y,x+y)
+complexexp ::  (Integer, Integer)  -> (Integer, Integer)-> Integer -> Integer -> (Integer, Integer)
+complexexp  (c, d) (e, f) k m
+  | k == 1 = (c*e - d*f,c*f+d*e)
+  | (k `mod` 2 == 1) = complexexp  (c,d) (  (c*e -d*f) `mod` m, (c*f + d*e) `mod`m) (k -1) m
+  | otherwise = complexexp  (  (c*c - d*d) `mod` m, (2*c*d) `mod` m  ) (e,f) (k `div` 2) m
 
 russianPeasantExponentiationCases :: Int -> IO()
 russianPeasantExponentiationCases n
@@ -19,16 +21,12 @@ russianPeasantExponentiationCases n
 
         let a = read $ x_t!!0 :: Integer
         let b = read $ x_t!!1 :: Integer
-        let k = read $ x_t!!1 :: Integer
-        let m = read $ x_t!!1 :: Integer
+        let k = read $ x_t!!2 :: Integer
+        let m = read $ x_t!!3 :: Integer
 
-        let r = (sqrt  ((fromInteger a) ^^ 2) + ((fromInteger b) ^^ 2)) ^^ k
-        let alpha = snd( properFraction( ((atan 1) * 10) / ( 2 * pi ) ) )
+        let res = complexexp  (a,b) (1,0) k m
+        putStrLn $ (show ((fst res) `mod` m))  ++ " "  ++  (show ((snd res) `mod` m))
 
-        --let x = fst( properFraction (r * cos( alpha ))  m )
-        --let y = fst( properFraction (r * sin (alpha ))  m )
-
-        --putStrLn x 
         russianPeasantExponentiationCases (n-1)
         
 

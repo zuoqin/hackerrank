@@ -5,3 +5,4 @@
 4. Rectangular Game: https://www.hackerrank.com/challenges/rectangular-game
 5. Special Multiple: https://www.hackerrank.com/challenges/special-multiple
 6. Is Fibo: https://www.hackerrank.com/challenges/is-fibo
+7. Russian Peasant Exponentiation: https://www.hackerrank.com/challenges/russian-peasant-exponentiation
