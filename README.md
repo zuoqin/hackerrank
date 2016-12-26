@@ -9,3 +9,4 @@
 8. Reverse Game: https://www.hackerrank.com/challenges/reverse-game
 9. Mini-Max Sum: https://www.hackerrank.com/challenges/mini-max-sum
 10. Designer PDF Viewer: https://www.hackerrank.com/challenges/designer-pdf-viewer
+11. Apple and Orange: https://www.hackerrank.com/challenges/apple-and-orange
