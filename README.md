@@ -7,3 +7,4 @@
 6. Is Fibo: https://www.hackerrank.com/challenges/is-fibo
 7. Russian Peasant Exponentiation: https://www.hackerrank.com/challenges/russian-peasant-exponentiation
 8. Reverse Game: https://www.hackerrank.com/challenges/reverse-game
+9. Mini-Max Sum: https://www.hackerrank.com/challenges/mini-max-sum
