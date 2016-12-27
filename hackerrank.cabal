@@ -14,9 +14,9 @@ extra-source-files:  README.md
 cabal-version:       >=1.10
 library
   hs-source-dirs:      src
-  exposed-modules:     MergeList,PointsOnaLine,FillingJars,SherlockAndProbability,RectangularGame,SpecialMultiple,IsFibo,RussianPeasantExponentiation,TailorShop,SherlockAndCounting,ReverseGame,MiniMaxSum,DesignerPDFViewer,AppleAndOrange,SherlockAndDivisors
+  exposed-modules:     MergeList,PointsOnaLine,FillingJars,SherlockAndProbability,RectangularGame,SpecialMultiple,IsFibo,RussianPeasantExponentiation,TailorShop,SherlockAndCounting,ReverseGame,MiniMaxSum,DesignerPDFViewer,AppleAndOrange,SherlockAndDivisors,MatrixTracing
   build-depends:       base >= 4.7 && < 5
-                     , containers
+                     , containers, array
   default-language:    Haskell2010
 
 executable hackerrank-exe
