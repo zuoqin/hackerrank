@@ -6,27 +6,28 @@ module SherlockAndCounting
 import Numeric
 import Data.Char
 
-complexexp :: (Integer, Integer) -> (Integer, Integer) -> Integer -> Integer -> (Integer, Integer)
-complexexp (a, b) (c, d) k m
-  | k == 0 = (c,d)
+calccase :: Int -> Int -> Int -> Int -> Int -> Int
+calccase n k lo hi res
+  | lo > hi  = res
   | otherwise = do
-      complexexp (a,b) ( (a*c - b*d), (a*d + b*c)) (k -1) m
+      let mid = (lo + hi) `div` 2
+      if mid * ( n - mid) <= n * k
+        then calccase n k (mid + 1) hi mid
+        else calccase n k lo (mid -1) res
 
 sherlockAndCountingCases :: Int -> IO()
-sherlockAndCountingCases n
-    | n <= 0 = putStrLn ""
+sherlockAndCountingCases cases
+    | cases <= 0 = putStrLn ""
     | otherwise = do          
         x_temp <- getLine
         let x_t = words x_temp
 
-        let a = read $ x_t!!0 :: Integer
-        let b = read $ x_t!!1 :: Integer
-        let k = read $ x_t!!2 :: Integer
-        let m = read $ x_t!!3 :: Integer
+        let n = read $ x_t!!0 :: Int
+        let k = read $ x_t!!1 :: Int
 
-        let res = complexexp (a,b) (1,0) k m
-        putStrLn $ (show ((fst res) `mod` m))  ++ " "  ++  (show ((snd res) `mod` m))
-        sherlockAndCountingCases (n-1)
+        let res = calccase n k 1 (n `div` 2) 0
+        print (if res == 0 then res else 2 * res - (if res + res == n then 1 else 0))
+        sherlockAndCountingCases (cases-1)
         
 
 sherlockAndCounting ::  IO ()

@@ -12,3 +12,4 @@
 11. Apple and Orange: https://www.hackerrank.com/challenges/apple-and-orange
 12. Sherlock and Divisors: https://www.hackerrank.com/challenges/sherlock-and-divisors
 13. Matrix Tracing: https://www.hackerrank.com/challenges/matrix-tracing
+14. Sherlock and Counting: https://www.hackerrank.com/challenges/sherlock-and-counting
