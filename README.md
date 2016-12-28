@@ -13,3 +13,4 @@
 12. Sherlock and Divisors: https://www.hackerrank.com/challenges/sherlock-and-divisors
 13. Matrix Tracing: https://www.hackerrank.com/challenges/matrix-tracing
 14. Sherlock and Counting: https://www.hackerrank.com/challenges/sherlock-and-counting
+15. Die Hard 3 https://www.hackerrank.com/challenges/die-hard-3
