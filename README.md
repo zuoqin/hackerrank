@@ -16,3 +16,4 @@
 15. Die Hard 3 https://www.hackerrank.com/challenges/die-hard-3
 16. Closest Number: https://www.hackerrank.com/challenges/closest-number
 17. Queue using Two Stacks: https://www.hackerrank.com/challenges/queue-using-two-stacks
+18. Balanced Brackets: https://www.hackerrank.com/challenges/balanced-brackets
