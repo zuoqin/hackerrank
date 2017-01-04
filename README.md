@@ -17,3 +17,6 @@
 16. Closest Number: https://www.hackerrank.com/challenges/closest-number
 17. Queue using Two Stacks: https://www.hackerrank.com/challenges/queue-using-two-stacks
 18. Balanced Brackets: https://www.hackerrank.com/challenges/balanced-brackets
+19. Shashank and List: https://www.hackerrank.com/challenges/shashank-and-list
+20. B'day Gift: https://www.hackerrank.com/challenges/bday-gift
+21. Jesse and Cookies: https://www.hackerrank.com/challenges/jesse-and-cookies (to be implemented using Priority Queue)
