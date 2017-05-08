@@ -1,5 +1,5 @@
-module LittleGauravAndSequence
-    ( littleGauravAndSequence
+module CaesarCipher
+    ( caesarCipher
     ) where
 
 import Numeric
@@ -47,21 +47,21 @@ readdata t
 
 
 
--- main :: IO ()
--- main = do
---     q_temp <- getLine
---     let q = read q_temp :: Int
---     forM_ [1..q] $ \a0  -> do
---         x_temp <- getLine
---         let x = read x_temp :: Int
---         let arr = decToBin x
---         let l = length arr
---         let res = foldl myfunc 0 (zip arr [0..]) 
---                             where myfunc a b = a + ((if (fst b) == 0 then 1 else 0) * (2 ^ (snd b)))
---         print res
+main :: IO ()
+main = do
+    q_temp <- getLine
+    let q = read q_temp :: Int
+    forM_ [1..q] $ \a0  -> do
+        x_temp <- getLine
+        let x = read x_temp :: Int
+        let arr = decToBin x
+        let l = length arr
+        let res = foldl myfunc 0 (zip arr [0..]) 
+                            where myfunc a b = a + ((if (fst b) == 0 then 1 else 0) * (2 ^ (snd b)))
+        print res
 
-littleGauravAndSequence :: IO ()
-littleGauravAndSequence = do
+caesarCipher :: IO ()
+caesarCipher = do
     x_temp <- getLine
     let n = read $ x_temp :: Int
 
