@@ -1,69 +1,89 @@
 module CaesarCipher
-    ( caesarCipher
+    ( caesarCipher,
+      movelow,
+      processdata
     ) where
 
-import Numeric
-calc1 :: Integer -> Integer
-calc1 n
-    | (n `mod` 2) == 1 = 5
-    | otherwise =  1
+import Data.Char
 
-calc2 :: Int -> Integer
-calc2 n =
-    if n == 0
-    then 2
-    else do
-          let new_n = n `mod` 5
-          if new_n == 1
-          then 6
-          else if new_n == 2
-               then 2
-               else if new_n == 3
-                    then 8
-                    else if new_n == 4
-                         then 4
-                         else 0
+movelow :: Char -> Int -> Char
+movelow c k =
+  if ord(c) + k > 122 then chr( 96 + ord(c) + k - 122 ) else chr( ord(c) + k )
+
+moveup :: Char -> Int -> Char
+moveup c k =
+  if ord(c) + k > 90 then chr( 64 + ord(c) + k - 90 ) else chr( ord(c) + k )
 
 
-decToBin x = reverse $ decToBin' x
-  where
-    decToBin' 0 = []
-    decToBin' y = let (a,b) = quotRem y 2 in [b] ++ decToBin' a
-    
-readdata :: Int -> IO()
-readdata t
-  | t > 0 = do
-      x_temp  <- getLine
-      let x_num = read $ x_temp :: Integer
-
-      let lg = 63 - (64 - length (decToBin x_num))
-
-
-      print( ( (calc1 x_num) * ( calc2 lg)) `mod` 10)
-      readdata (t - 1)
+processdata :: [Char] -> Int -> IO()
+processdata s k
+  | k >= 0 = do
+      let res = map (\x -> if (ord x) <= 122 && (ord x) >= 97 then movelow x k else if (ord x) <= 90 && (ord x) >= 65 then moveup x k else x) s
+      putStrLn res
   | otherwise = do
-      putStr ""
+      putStrLn s
 
-
-
-
-main :: IO ()
-main = do
-    q_temp <- getLine
-    let q = read q_temp :: Int
-    forM_ [1..q] $ \a0  -> do
-        x_temp <- getLine
-        let x = read x_temp :: Int
-        let arr = decToBin x
-        let l = length arr
-        let res = foldl myfunc 0 (zip arr [0..]) 
-                            where myfunc a b = a + ((if (fst b) == 0 then 1 else 0) * (2 ^ (snd b)))
-        print res
 
 caesarCipher :: IO ()
 caesarCipher = do
-    x_temp <- getLine
-    let n = read $ x_temp :: Int
-
+    n_temp <- getLine
+    let n = read n_temp :: Int
+    s <- getLine
+    k_temp <- getLine
+    let k = read k_temp :: Int
     
-    readdata n
+    processdata s (rem k 26)
+
+
+
+
+
+-- import java.io.*;
+-- import java.util.*;
+-- import java.text.*;
+-- import java.math.*;
+-- import java.util.regex.*;
+
+-- public class Solution {
+  
+--   public static void main(String[] args) {
+--     /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    
+--     Scanner input = new Scanner(System.in); 
+--     int textLength = Integer.parseInt(input.nextLine());
+--     String text = input.nextLine();
+--     int shiftNum = Integer.parseInt(input.nextLine());
+--     int charStatus = 0;
+    
+    
+--     for (int i = 0; i < textLength; i++) {
+--       char c = text.charAt(i);
+--       if ((((int) c >= 65) && ((int) c <= 90)) || (((int) c >= 97) && ((int) c <= 122))) {
+--         //uppercase
+--         if (((int) c >= 65) && ((int) c <= 90)) {
+--           charStatus = 1;
+--         }
+--         //lowercase
+--         else if (((int) c >= 97) && ((int) c <= 122)) {
+--           charStatus = 2;
+--         }
+--         for (int k = 0; k < shiftNum; k++) {
+--           c++;
+--           if (charStatus == 1) {
+--             if (c > 90) {
+--               c = 65;
+--             }
+--           }
+--           else if (charStatus == 2) {
+--             if (c > 122) {
+--               c = 97;
+--             }
+--           }
+--         }
+--       }
+--       System.out.print(c);
+--     }
+    
+--   }
+  
+-- }

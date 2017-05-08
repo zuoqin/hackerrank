@@ -16,7 +16,7 @@ cabal-version:       >=1.10
 -- MergeList,PointsOnaLine,FillingJars,SherlockAndProbability,RectangularGame,SpecialMultiple,IsFibo,RussianPeasantExponentiation,TailorShop,SherlockAndCounting,ReverseGame,MiniMaxSum,DesignerPDFViewer,AppleAndOrange,SherlockAndDivisors,MatrixTracing,DieHard3,ClosestNumber,QueueUsingTwoStacks,BalancedBrackets,JesseAndCookies,Data.PriorityQueue,B'dayGift,ShashankAndList
 library
   hs-source-dirs:      src
-  exposed-modules:     LittleGauravAndSequence
+  exposed-modules:     CaesarCipher
   build-depends:       base >= 3 && < 5
                      , containers, array, reord >= 0.0.0.2, stateref >= 0.3 && < 0.4,
                         queue >= 0.1.2 && < 0.2
