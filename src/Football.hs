@@ -44,12 +44,12 @@ buildthisday pairs thisday = do
 
 printday :: [(Int,Int,Int)] -> [Int] -> [(Int,Int)]
 printday pairs prevdays = do
+  let allteams = (nub . tupleslisttointlist . tripletupletodouble) pairs
+  let resteams = filter (\x -> (searcharr x prevdays == 0) && (searcharr x prevdays == 0) ) allteams
 
-   let resteams = filter (\x -> (searcharr x prevdays == 0) && (searcharr x prevdays == 0) ) [1..17]
+  let newarr = filter (\(x,y,z) -> (searcharr x resteams > 0) && (searcharr y resteams > 0) && z == 0) pairs
 
-   let newarr = filter (\(x,y,z) -> (searcharr x resteams > 0) && (searcharr y resteams > 0) && z == 0) pairs
-
-   buildthisday newarr []
+  buildthisday newarr []
 
 
 printschedule :: [(Int,Int,Int)] -> [(Int,Int)] -> IO()
@@ -76,5 +76,7 @@ outerProduct xs ys =
 
 football :: IO ()
 football = do
+    k_temp <- getLine
+    let k = read k_temp :: Int
 
-    printschedule (filter (\(x,y,_) -> x /= y) ( outerProduct [1 .. 17] [2 .. 17] )) []
+    printschedule (filter (\(x,y,_) -> x < y) ( outerProduct [1 .. k] [2 .. k] )) []
